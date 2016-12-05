@@ -16,4 +16,35 @@ namespace Translation\Common;
  */
 interface Storage
 {
+    /**
+     * Get a translation
+     *
+     * @param string $locale
+     * @param string $domain
+     * @param string $key
+     *
+     * @return string
+     */
+    public function get($locale, $domain, $key);
+
+    /**
+     * Update a translation
+     *
+     * @param string $locale
+     * @param string $domain
+     * @param string $key
+     * @param string $message
+     */
+    public function update($locale, $domain, $key, $message);
+
+    /**
+     * Remove a translation from the storage.
+     *
+     * @param string $locale
+     * @param string $domain
+     * @param string $key
+     */
+    public function delete($locale, $domain, $key);
+
 }
+
