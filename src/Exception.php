@@ -7,5 +7,4 @@ namespace Translation\Common;
  */
 interface Exception
 {
-
 }
