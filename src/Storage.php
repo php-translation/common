@@ -17,7 +17,7 @@ namespace Translation\Common;
 interface Storage
 {
     /**
-     * Get a translation
+     * Get a translation.
      *
      * @param string $locale
      * @param string $domain
@@ -28,7 +28,7 @@ interface Storage
     public function get($locale, $domain, $key);
 
     /**
-     * Update a translation
+     * Update a translation.
      *
      * @param string $locale
      * @param string $domain
@@ -45,6 +45,4 @@ interface Storage
      * @param string $key
      */
     public function delete($locale, $domain, $key);
-
 }
-
