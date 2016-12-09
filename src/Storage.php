@@ -11,6 +11,8 @@
 
 namespace Translation\Common;
 
+use Translation\Common\Model\Message;
+
 /**
  * The storage is a place when you can store your translations. A database, filesystem or a third party platform.
  */
@@ -23,7 +25,7 @@ interface Storage
      * @param string $domain
      * @param string $key
      *
-     * @return string
+     * @return Message
      */
     public function get($locale, $domain, $key);
 
@@ -35,7 +37,7 @@ interface Storage
      * @param string $key
      * @param string $message
      */
-    public function update($locale, $domain, $key, $message);
+    public function update(Message $message);
 
     /**
      * Remove a translation from the storage.
