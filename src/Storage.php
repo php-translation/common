@@ -32,10 +32,7 @@ interface Storage
     /**
      * Update a translation.
      *
-     * @param string $locale
-     * @param string $domain
-     * @param string $key
-     * @param string $message
+     * @param Message $message
      */
     public function update(Message $message);
 
