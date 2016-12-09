@@ -30,7 +30,7 @@ class Message
      *
      * The key/phrase you write in the source code
      */
-    private $id;
+    private $key;
 
     /**
      * @var string
@@ -54,16 +54,16 @@ class Message
     private $meta = [];
 
     /**
-     * @param string $id
+     * @param string $key
      * @param string $domain
      * @param string $locale
      * @param string $translation
      * @param array  $meta
      */
-    public function __construct($id = '', $domain = '', $locale = '', $translation = '', array $meta = [])
+    public function __construct($key = '', $domain = '', $locale = '', $translation = '', array $meta = [])
     {
+        $this->key = $key;
         $this->domain = $domain;
-        $this->id = $id;
         $this->locale = $locale;
         $this->translation = $translation;
         $this->meta = $meta;
@@ -92,19 +92,19 @@ class Message
     /**
      * @return string
      */
-    public function getId()
+    public function getKey()
     {
-        return $this->id;
+        return $this->key;
     }
 
     /**
-     * @param string $id
+     * @param string $key
      *
      * @return Message
      */
-    public function setId($id)
+    public function setKey($key)
     {
-        $this->id = $id;
+        $this->key = $key;
 
         return $this;
     }
