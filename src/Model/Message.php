@@ -54,13 +54,13 @@ class Message
     private $meta = [];
 
     /**
-     * @param string $domain
      * @param string $id
+     * @param string $domain
      * @param string $locale
      * @param string $translation
      * @param array  $meta
      */
-    public function __construct($domain = '', $id = '', $locale = '', $translation = '', array $meta = [])
+    public function __construct($id = '', $domain = '', $locale = '', $translation = '', array $meta = [])
     {
         $this->domain = $domain;
         $this->id = $id;
