@@ -30,14 +30,16 @@ interface Storage
     public function get($locale, $domain, $key);
 
     /**
-     * Update a translation.
+     * Update a translation. Creates a translation if there is none to update.
      *
      * @param Message $message
      */
     public function update(Message $message);
 
     /**
-     * Remove a translation from the storage.
+     * Remove a translation from the storage. If the storage implementation makes
+     * a difference between translations and assets then this function MUST only
+     * remove the translation.
      *
      * @param string $locale
      * @param string $domain
