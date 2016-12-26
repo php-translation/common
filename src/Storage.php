@@ -14,7 +14,8 @@ namespace Translation\Common;
 use Translation\Common\Model\Message;
 
 /**
- * The storage is a place when you can store your translations. A database, filesystem or a third party platform.
+ * The storage is a place when you can store your translations. A database, filesystem
+ * or a third party platform.
  */
 interface Storage
 {
@@ -28,6 +29,14 @@ interface Storage
      * @return Message
      */
     public function get($locale, $domain, $key);
+
+    /**
+     * Create a new translation or asset. If a translation already exist this function
+     * will do nothing.
+     *
+     * @param Message $message
+     */
+    public function create(Message $message);
 
     /**
      * Update a translation. Creates a translation if there is none to update.
