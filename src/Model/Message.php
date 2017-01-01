@@ -170,9 +170,10 @@ final class Message
     }
 
     /**
-     * @param array $meta
+     * @param string $key
+     * @param string $value
      *
-     * @return Message
+     * @return $this
      */
     public function addMeta($key, $value)
     {
