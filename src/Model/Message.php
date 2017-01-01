@@ -16,7 +16,7 @@ namespace Translation\Common\Model;
  *
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  */
-class Message
+final class Message
 {
     /**
      * @var string
