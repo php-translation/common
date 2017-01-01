@@ -28,7 +28,9 @@ interface TransferableStorage
     public function export(MessageCatalogueInterface $catalogue);
 
     /**
-     * Populate the storage with all the messages in $cataloge.
+     * Populate the storage with all the messages in $catalogue. This action
+     * should be considered as a "force merge". Existing messages in the storage
+     * will be overwritten but no message will be removed.
      *
      * @param MessageCatalogueInterface $catalogue
      */
