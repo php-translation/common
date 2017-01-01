@@ -16,6 +16,8 @@ use Translation\Common\Model\Message;
 /**
  * The storage is a place when you can store your translations. A database, filesystem
  * or a third party platform.
+ *
+ * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  */
 interface Storage
 {
