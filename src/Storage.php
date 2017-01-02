@@ -22,7 +22,7 @@ use Translation\Common\Model\Message;
 interface Storage
 {
     /**
-     * Get a translation.
+     * Get a translation. If no translation is found, null MUST be returned.
      *
      * @param string $locale
      * @param string $domain
