@@ -11,12 +11,13 @@
 
 namespace Translation\common\tests\Unit\Model;
 
+use PHPUnit\Framework\TestCase;
 use Translation\Common\Model\Message;
 
 /**
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  */
-class MessageTest extends \PHPUnit_Framework_TestCase
+class MessageTest extends TestCase
 {
     public function testAccessors()
     {
