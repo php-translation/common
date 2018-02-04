@@ -28,13 +28,13 @@ class MessageTest extends TestCase
         $this->assertEquals('locale', $message->getLocale());
         $this->assertEquals('translation', $message->getTranslation());
 
-        $message->setKey('key_foo');
+        $message = $message->withKey('key_foo');
         $this->assertEquals('key_foo', $message->getKey());
-        $message->setDomain('domain_foo');
+        $message = $message->withDomain('domain_foo');
         $this->assertEquals('domain_foo', $message->getDomain());
-        $message->setLocale('locale_foo');
+        $message = $message->withLocale('locale_foo');
         $this->assertEquals('locale_foo', $message->getLocale());
-        $message->setTranslation('trans_foo');
+        $message = $message->withTranslation('trans_foo');
         $this->assertEquals('trans_foo', $message->getTranslation());
     }
 
@@ -45,11 +45,29 @@ class MessageTest extends TestCase
         $this->assertEquals(['foo' => 'bar'], $message->getAllMeta());
         $this->assertEquals('bar', $message->getMeta('foo'));
 
-        $message->addMeta('key', 'value');
+        $message = $message->withAddedMeta('key', 'value');
         $this->assertEquals('value', $message->getMeta('key'));
 
-        $message->setMeta(['new' => 'values']);
+        $message = $message->withMeta(['new' => 'values']);
         $this->assertNull($message->getMeta('key'));
         $this->assertEquals('values', $message->getMeta('new'));
+    }
+
+    public function testImmutability()
+    {
+        $message = new Message('key', 'domain', 'locale', 'translation', ['foo' => 'bar']);
+
+        $message->withKey('key_foo');
+        $message->withDomain('domain_foo');
+        $message->withLocale('locale_foo');
+        $message->withTranslation('trans_foo');
+        $message->withMeta(['new' => 'values']);
+        $message->withAddedMeta('key', 'value');
+
+        $this->assertEquals('key', $message->getKey());
+        $this->assertEquals('domain', $message->getDomain());
+        $this->assertEquals('locale', $message->getLocale());
+        $this->assertEquals('translation', $message->getTranslation());
+        $this->assertEquals(['foo' => 'bar'], $message->getAllMeta());
     }
 }
