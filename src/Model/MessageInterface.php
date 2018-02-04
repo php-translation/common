@@ -1,9 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Translation\Common\Model;
-
 
 /**
  * A object representation of a translation in a specific language.
