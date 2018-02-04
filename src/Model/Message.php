@@ -75,11 +75,12 @@ final class Message implements MessageInterface
     /**
      * {@inheritdoc}
      */
-    public function setDomain($domain)
+    public function withDomain($domain)
     {
-        $this->domain = $domain;
+        $new = clone $this;
+        $new->domain = $domain;
 
-        return $this;
+        return $new;
     }
 
     /**
@@ -93,11 +94,12 @@ final class Message implements MessageInterface
     /**
      * {@inheritdoc}
      */
-    public function setKey($key)
+    public function withKey($key)
     {
-        $this->key = $key;
+        $new = clone $this;
+        $new->key = $key;
 
-        return $this;
+        return $new;
     }
 
     /**
@@ -111,11 +113,12 @@ final class Message implements MessageInterface
     /**
      * {@inheritdoc}
      */
-    public function setLocale($locale)
+    public function withLocale($locale)
     {
-        $this->locale = $locale;
+        $new = clone $this;
+        $new->locale = $locale;
 
-        return $this;
+        return $new;
     }
 
     /**
@@ -129,11 +132,12 @@ final class Message implements MessageInterface
     /**
      * {@inheritdoc}
      */
-    public function setTranslation($translation)
+    public function withTranslation($translation)
     {
-        $this->translation = $translation;
+        $new = clone $this;
+        $new->translation = $translation;
 
-        return $this;
+        return $new;
     }
 
     /**
@@ -147,21 +151,23 @@ final class Message implements MessageInterface
     /**
      * {@inheritdoc}
      */
-    public function setMeta(array $meta)
+    public function withMeta(array $meta)
     {
-        $this->meta = $meta;
+        $new = clone $this;
+        $new->meta = $meta;
 
-        return $this;
+        return $new;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function addMeta($key, $value)
+    public function withAddedMeta($key, $value)
     {
-        $this->meta[$key] = $value;
+        $new = clone $this;
+        $new->meta[$key] = $value;
 
-        return $this;
+        return $new;
     }
 
     /**
