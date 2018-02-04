@@ -11,12 +11,7 @@
 
 namespace Translation\Common\Model;
 
-/**
- * A object representation of a translation in a specific language.
- *
- * @author Tobias Nyholm <tobias.nyholm@gmail.com>
- */
-final class Message
+final class Message implements MessageInterface
 {
     /**
      * @var string
@@ -70,7 +65,7 @@ final class Message
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
     public function getDomain()
     {
@@ -78,9 +73,7 @@ final class Message
     }
 
     /**
-     * @param string $domain
-     *
-     * @return Message
+     * {@inheritdoc}
      */
     public function setDomain($domain)
     {
@@ -90,7 +83,7 @@ final class Message
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
     public function getKey()
     {
@@ -98,9 +91,7 @@ final class Message
     }
 
     /**
-     * @param string $key
-     *
-     * @return Message
+     * {@inheritdoc}
      */
     public function setKey($key)
     {
@@ -110,7 +101,7 @@ final class Message
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
     public function getLocale()
     {
@@ -118,9 +109,7 @@ final class Message
     }
 
     /**
-     * @param string $locale
-     *
-     * @return Message
+     * {@inheritdoc}
      */
     public function setLocale($locale)
     {
@@ -130,7 +119,7 @@ final class Message
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
     public function getTranslation()
     {
@@ -138,9 +127,7 @@ final class Message
     }
 
     /**
-     * @param string $translation
-     *
-     * @return Message
+     * {@inheritdoc}
      */
     public function setTranslation($translation)
     {
@@ -150,7 +137,7 @@ final class Message
     }
 
     /**
-     * @return array
+     * {@inheritdoc}
      */
     public function getAllMeta()
     {
@@ -158,9 +145,7 @@ final class Message
     }
 
     /**
-     * @param array $meta
-     *
-     * @return Message
+     * {@inheritdoc}
      */
     public function setMeta(array $meta)
     {
@@ -170,10 +155,7 @@ final class Message
     }
 
     /**
-     * @param string $key
-     * @param string $value
-     *
-     * @return $this
+     * {@inheritdoc}
      */
     public function addMeta($key, $value)
     {
@@ -183,16 +165,14 @@ final class Message
     }
 
     /**
-     * @param string $key
-     *
-     * @return mixed|null
+     * {@inheritdoc}
      */
-    public function getMeta($key)
+    public function getMeta($key, $default = null)
     {
-        if (isset($this->meta[$key])) {
+        if (key_exists($key, $this->meta)) {
             return $this->meta[$key];
         }
 
-        return;
+        return $default;
     }
 }
