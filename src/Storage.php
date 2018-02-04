@@ -11,7 +11,6 @@
 
 namespace Translation\Common;
 
-use Translation\Common\Model\Message;
 use Translation\Common\Model\MessageInterface;
 
 /**

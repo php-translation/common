@@ -175,7 +175,7 @@ final class Message implements MessageInterface
      */
     public function getMeta($key, $default = null)
     {
-        if (key_exists($key, $this->meta)) {
+        if (array_key_exists($key, $this->meta)) {
             return $this->meta[$key];
         }
 
