@@ -28,8 +28,6 @@ class MessageTest extends TestCase
         $this->assertEquals('locale', $message->getLocale());
         $this->assertEquals('translation', $message->getTranslation());
 
-        $message = $message->withKey('key_foo');
-        $this->assertEquals('key_foo', $message->getKey());
         $message = $message->withDomain('domain_foo');
         $this->assertEquals('domain_foo', $message->getDomain());
         $message = $message->withLocale('locale_foo');
