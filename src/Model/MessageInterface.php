@@ -40,17 +40,6 @@ interface MessageInterface
     public function getKey();
 
     /**
-     * This method MUST be implemented in such a way as to retain the
-     * immutability of the message, and MUST return an instance that has the
-     * changed request target.
-     *
-     * @param string $key
-     *
-     * @return static
-     */
-    public function withKey($key);
-
-    /**
      * @return string
      */
     public function getLocale();

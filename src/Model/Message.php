@@ -55,7 +55,7 @@ final class Message implements MessageInterface
      * @param string $translation
      * @param array  $meta
      */
-    public function __construct($key = '', $domain = '', $locale = '', $translation = '', array $meta = [])
+    public function __construct($key, $domain = '', $locale = '', $translation = '', array $meta = [])
     {
         $this->key = $key;
         $this->domain = $domain;
@@ -89,17 +89,6 @@ final class Message implements MessageInterface
     public function getKey()
     {
         return $this->key;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function withKey($key)
-    {
-        $new = clone $this;
-        $new->key = $key;
-
-        return $new;
     }
 
     /**
