@@ -57,7 +57,6 @@ class MessageTest extends TestCase
     {
         $message = new Message('key', 'domain', 'locale', 'translation', ['foo' => 'bar']);
 
-        $message->withKey('key_foo');
         $message->withDomain('domain_foo');
         $message->withLocale('locale_foo');
         $message->withTranslation('trans_foo');
