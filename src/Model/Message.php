@@ -11,12 +11,7 @@
 
 namespace Translation\Common\Model;
 
-/**
- * A object representation of a translation in a specific language.
- *
- * @author Tobias Nyholm <tobias.nyholm@gmail.com>
- */
-final class Message
+final class Message implements MessageInterface
 {
     /**
      * @var string
@@ -60,7 +55,7 @@ final class Message
      * @param string $translation
      * @param array  $meta
      */
-    public function __construct($key = '', $domain = '', $locale = '', $translation = '', array $meta = [])
+    public function __construct($key, $domain = '', $locale = '', $translation = '', array $meta = [])
     {
         $this->key = $key;
         $this->domain = $domain;
@@ -70,7 +65,7 @@ final class Message
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
     public function getDomain()
     {
@@ -78,19 +73,18 @@ final class Message
     }
 
     /**
-     * @param string $domain
-     *
-     * @return Message
+     * {@inheritdoc}
      */
-    public function setDomain($domain)
+    public function withDomain($domain)
     {
-        $this->domain = $domain;
+        $new = clone $this;
+        $new->domain = $domain;
 
-        return $this;
+        return $new;
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
     public function getKey()
     {
@@ -98,19 +92,7 @@ final class Message
     }
 
     /**
-     * @param string $key
-     *
-     * @return Message
-     */
-    public function setKey($key)
-    {
-        $this->key = $key;
-
-        return $this;
-    }
-
-    /**
-     * @return string
+     * {@inheritdoc}
      */
     public function getLocale()
     {
@@ -118,19 +100,18 @@ final class Message
     }
 
     /**
-     * @param string $locale
-     *
-     * @return Message
+     * {@inheritdoc}
      */
-    public function setLocale($locale)
+    public function withLocale($locale)
     {
-        $this->locale = $locale;
+        $new = clone $this;
+        $new->locale = $locale;
 
-        return $this;
+        return $new;
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
     public function getTranslation()
     {
@@ -138,19 +119,18 @@ final class Message
     }
 
     /**
-     * @param string $translation
-     *
-     * @return Message
+     * {@inheritdoc}
      */
-    public function setTranslation($translation)
+    public function withTranslation($translation)
     {
-        $this->translation = $translation;
+        $new = clone $this;
+        $new->translation = $translation;
 
-        return $this;
+        return $new;
     }
 
     /**
-     * @return array
+     * {@inheritdoc}
      */
     public function getAllMeta()
     {
@@ -158,41 +138,36 @@ final class Message
     }
 
     /**
-     * @param array $meta
-     *
-     * @return Message
+     * {@inheritdoc}
      */
-    public function setMeta(array $meta)
+    public function withMeta(array $meta)
     {
-        $this->meta = $meta;
+        $new = clone $this;
+        $new->meta = $meta;
 
-        return $this;
+        return $new;
     }
 
     /**
-     * @param string $key
-     * @param string $value
-     *
-     * @return $this
+     * {@inheritdoc}
      */
-    public function addMeta($key, $value)
+    public function withAddedMeta($key, $value)
     {
-        $this->meta[$key] = $value;
+        $new = clone $this;
+        $new->meta[$key] = $value;
 
-        return $this;
+        return $new;
     }
 
     /**
-     * @param string $key
-     *
-     * @return mixed|null
+     * {@inheritdoc}
      */
-    public function getMeta($key)
+    public function getMeta($key, $default = null)
     {
-        if (isset($this->meta[$key])) {
+        if (array_key_exists($key, $this->meta)) {
             return $this->meta[$key];
         }
 
-        return;
+        return $default;
     }
 }

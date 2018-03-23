@@ -11,7 +11,7 @@
 
 namespace Translation\Common;
 
-use Translation\Common\Model\Message;
+use Translation\Common\Model\MessageInterface;
 
 /**
  * The storage is a place when you can store your translations. A database, filesystem
@@ -28,7 +28,7 @@ interface Storage
      * @param string $domain
      * @param string $key
      *
-     * @return Message
+     * @return MessageInterface
      */
     public function get($locale, $domain, $key);
 
@@ -36,16 +36,16 @@ interface Storage
      * Create a new translation or asset. If a translation already exist this function
      * will do nothing.
      *
-     * @param Message $message
+     * @param MessageInterface $message
      */
-    public function create(Message $message);
+    public function create(MessageInterface $message);
 
     /**
      * Update a translation. Creates a translation if there is none to update.
      *
-     * @param Message $message
+     * @param MessageInterface $message
      */
-    public function update(Message $message);
+    public function update(MessageInterface $message);
 
     /**
      * Remove a translation from the storage. If the storage implementation makes
