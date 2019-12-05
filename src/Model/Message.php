@@ -48,14 +48,7 @@ final class Message implements MessageInterface
      */
     private $meta = [];
 
-    /**
-     * @param string $key
-     * @param string $domain
-     * @param string $locale
-     * @param string $translation
-     * @param array  $meta
-     */
-    public function __construct($key, $domain = '', $locale = '', $translation = '', array $meta = [])
+    public function __construct(string $key, string $domain = '', string $locale = '', string $translation = '', array $meta = [])
     {
         $this->key = $key;
         $this->domain = $domain;
@@ -67,7 +60,7 @@ final class Message implements MessageInterface
     /**
      * {@inheritdoc}
      */
-    public function getDomain()
+    public function getDomain(): string
     {
         return $this->domain;
     }
@@ -75,7 +68,7 @@ final class Message implements MessageInterface
     /**
      * {@inheritdoc}
      */
-    public function withDomain($domain)
+    public function withDomain(string $domain): MessageInterface
     {
         $new = clone $this;
         $new->domain = $domain;
@@ -86,7 +79,7 @@ final class Message implements MessageInterface
     /**
      * {@inheritdoc}
      */
-    public function getKey()
+    public function getKey(): string
     {
         return $this->key;
     }
@@ -94,7 +87,7 @@ final class Message implements MessageInterface
     /**
      * {@inheritdoc}
      */
-    public function getLocale()
+    public function getLocale(): string
     {
         return $this->locale;
     }
@@ -102,7 +95,7 @@ final class Message implements MessageInterface
     /**
      * {@inheritdoc}
      */
-    public function withLocale($locale)
+    public function withLocale(string $locale): MessageInterface
     {
         $new = clone $this;
         $new->locale = $locale;
@@ -113,7 +106,7 @@ final class Message implements MessageInterface
     /**
      * {@inheritdoc}
      */
-    public function getTranslation()
+    public function getTranslation(): string
     {
         return $this->translation;
     }
@@ -121,7 +114,7 @@ final class Message implements MessageInterface
     /**
      * {@inheritdoc}
      */
-    public function withTranslation($translation)
+    public function withTranslation(string $translation): MessageInterface
     {
         $new = clone $this;
         $new->translation = $translation;
@@ -132,7 +125,7 @@ final class Message implements MessageInterface
     /**
      * {@inheritdoc}
      */
-    public function getAllMeta()
+    public function getAllMeta(): array
     {
         return $this->meta;
     }
@@ -140,7 +133,7 @@ final class Message implements MessageInterface
     /**
      * {@inheritdoc}
      */
-    public function withMeta(array $meta)
+    public function withMeta(array $meta): MessageInterface
     {
         $new = clone $this;
         $new->meta = $meta;
@@ -151,7 +144,7 @@ final class Message implements MessageInterface
     /**
      * {@inheritdoc}
      */
-    public function withAddedMeta($key, $value)
+    public function withAddedMeta(string $key, $value): MessageInterface
     {
         $new = clone $this;
         $new->meta[$key] = $value;
@@ -162,9 +155,9 @@ final class Message implements MessageInterface
     /**
      * {@inheritdoc}
      */
-    public function getMeta($key, $default = null)
+    public function getMeta(string $key, $default = null)
     {
-        if (array_key_exists($key, $this->meta)) {
+        if (\array_key_exists($key, $this->meta)) {
             return $this->meta[$key];
         }
 

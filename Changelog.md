@@ -1,6 +1,11 @@
 # Change Log
 
-The change log describes what is "Added", "Removed", "Changed" or "Fixed" between each release. 
+The change log describes what is "Added", "Removed", "Changed" or "Fixed" between each release.
+
+## 2.0.0
+
+Drop support og php < 7.2
+Add strict I/O type hinting
 
 ## 1.0.0
 
@@ -27,7 +32,7 @@ No changes since 0.3.0.
 
 ### Changed
 
-- Documentation change on interface. 
+- Documentation change on interface.
 
 ## 0.2.1
 

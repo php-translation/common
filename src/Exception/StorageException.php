@@ -20,7 +20,7 @@ use Translation\Common\Exception;
  */
 class StorageException extends \RuntimeException implements Exception
 {
-    public static function translationExists($key, $domain)
+    public static function translationExists(string $key, string $domain): self
     {
         return new self(sprintf('You cannot create a new translation with key "%s". That key does already exist in domain "%s".', $key, $domain));
     }

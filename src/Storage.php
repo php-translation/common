@@ -23,38 +23,24 @@ interface Storage
 {
     /**
      * Get a translation. If no translation is found, null MUST be returned.
-     *
-     * @param string $locale
-     * @param string $domain
-     * @param string $key
-     *
-     * @return MessageInterface
      */
-    public function get($locale, $domain, $key);
+    public function get(string $locale, string $domain, string $key): MessageInterface;
 
     /**
      * Create a new translation or asset. If a translation already exist this function
      * will do nothing.
-     *
-     * @param MessageInterface $message
      */
-    public function create(MessageInterface $message);
+    public function create(MessageInterface $message): void;
 
     /**
      * Update a translation. Creates a translation if there is none to update.
-     *
-     * @param MessageInterface $message
      */
-    public function update(MessageInterface $message);
+    public function update(MessageInterface $message): void;
 
     /**
      * Remove a translation from the storage. If the storage implementation makes
      * a difference between translations and assets then this function MUST only
      * remove the translation.
-     *
-     * @param string $locale
-     * @param string $domain
-     * @param string $key
      */
-    public function delete($locale, $domain, $key);
+    public function delete(string $locale, string $domain, string $key): void;
 }

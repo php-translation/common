@@ -18,92 +18,55 @@ namespace Translation\Common\Model;
  */
 interface MessageInterface
 {
-    /**
-     * @return string
-     */
-    public function getDomain();
+    public function getDomain(): string;
 
     /**
      * This method MUST be implemented in such a way as to retain the
      * immutability of the message, and MUST return an instance that has the
      * changed request target.
-     *
-     * @param string $domain
-     *
-     * @return static
      */
-    public function withDomain($domain);
+    public function withDomain(string $domain): self;
 
-    /**
-     * @return string
-     */
-    public function getKey();
+    public function getKey(): string;
 
-    /**
-     * @return string
-     */
-    public function getLocale();
+    public function getLocale(): string;
 
     /**
      * This method MUST be implemented in such a way as to retain the
      * immutability of the message, and MUST return an instance that has the
      * changed request target.
-     *
-     * @param string $locale
-     *
-     * @return static
      */
-    public function withLocale($locale);
+    public function withLocale(string $locale): self;
 
-    /**
-     * @return string
-     */
-    public function getTranslation();
+    public function getTranslation(): string;
 
     /**
      * This method MUST be implemented in such a way as to retain the
      * immutability of the message, and MUST return an instance that has the
      * changed request target.
-     *
-     * @param string $translation
-     *
-     * @return static
      */
-    public function withTranslation($translation);
+    public function withTranslation(string $translation): self;
 
-    /**
-     * @return array
-     */
-    public function getAllMeta();
+    public function getAllMeta(): array;
 
     /**
      * This method MUST be implemented in such a way as to retain the
      * immutability of the message, and MUST return an instance that has the
      * changed request target.
-     *
-     * @param array $meta
-     *
-     * @return static
      */
-    public function withMeta(array $meta);
+    public function withMeta(array $meta): self;
 
     /**
      * This method MUST be implemented in such a way as to retain the
      * immutability of the message, and MUST return an instance that has the
      * changed request target.
-     *
-     * @param string $key
-     * @param string $value
-     *
-     * @return static
      */
-    public function withAddedMeta($key, $value);
+    public function withAddedMeta(string $key, string $value): self;
 
     /**
-     * @param string     $key
      * @param mixed|null $default
      *
      * @return mixed|null
      */
-    public function getMeta($key, $default = null);
+    public function getMeta(string $key, $default = null);
 }
