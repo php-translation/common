@@ -6,6 +6,7 @@ The change log describes what is "Added", "Removed", "Changed" or "Fixed" betwee
 
 Drop support og php < 7.2
 Add strict I/O type hinting
+Allow passing options when exporting / importing a catalogue
 
 ## 1.0.0
 
