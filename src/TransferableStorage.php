@@ -22,17 +22,13 @@ interface TransferableStorage
 {
     /**
      * Get messages from the storage into the $catalogue.
-     *
-     * @param MessageCatalogueInterface $catalogue
      */
-    public function export(MessageCatalogueInterface $catalogue);
+    public function export(MessageCatalogueInterface $catalogue): void;
 
     /**
      * Populate the storage with all the messages in $catalogue. This action
      * should be considered as a "force merge". Existing messages in the storage
      * will be overwritten but no message will be removed.
-     *
-     * @param MessageCatalogueInterface $catalogue
      */
-    public function import(MessageCatalogueInterface $catalogue);
+    public function import(MessageCatalogueInterface $catalogue): void;
 }
