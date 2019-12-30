@@ -24,7 +24,7 @@ interface Storage
     /**
      * Get a translation. If no translation is found, null MUST be returned.
      */
-    public function get(string $locale, string $domain, string $key): MessageInterface;
+    public function get(string $locale, string $domain, string $key): ?MessageInterface;
 
     /**
      * Create a new translation or asset. If a translation already exist this function
