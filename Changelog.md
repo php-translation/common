@@ -2,6 +2,11 @@
 
 The change log describes what is "Added", "Removed", "Changed" or "Fixed" between each release.
 
+## 3.0.0
+
+Allowing `Storage::get()` to return null. This has always been the intention but 2.0.0 was tagged with a bug
+that could only be corrected with a BC break. 
+
 ## 2.0.0
 
 Drop support og php < 7.2
