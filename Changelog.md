@@ -2,10 +2,14 @@
 
 The change log describes what is "Added", "Removed", "Changed" or "Fixed" between each release.
 
+## 3.0.1
+
+Added comments on the `TransferableStorage` interface to describe the options parameter.
+
 ## 3.0.0
 
 Allowing `Storage::get()` to return null. This has always been the intention but 2.0.0 was tagged with a bug
-that could only be corrected with a BC break. 
+that could only be corrected with a BC break.
 
 ## 2.0.0
 
