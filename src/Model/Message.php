@@ -144,7 +144,7 @@ final class Message implements MessageInterface
     /**
      * {@inheritdoc}
      */
-    public function withAddedMeta(string $key, $value): MessageInterface
+    public function withAddedMeta(string $key, string $value): MessageInterface
     {
         $new = clone $this;
         $new->meta[$key] = $value;

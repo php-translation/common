@@ -31,7 +31,7 @@ matrix:
           env: DEPENDENCIES="dunglas/symfony-lock:^4"
 
           # Latest commit to master
-        - php: 7.4snapshot
+        - php: 7.4
           env: STABILITY="dev"
 
     allow_failures:
