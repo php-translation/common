@@ -16,4 +16,3 @@ $ composer require php-translation/common
 ## Documentation
 
 Read the full documentation at [http://php-translation.readthedocs.io](http://php-translation.readthedocs.io/en/latest/).
-

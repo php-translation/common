@@ -1,4 +1,6 @@
 parameters:
-    level: 5
+    level: max
+    inferPrivatePropertyTypeFromConstructor: true
+    checkMissingIterableValueType: false
     paths:
       - src
