@@ -13,6 +13,7 @@
         "symfony/translation": " ^3.4 || ^4.3 || ^5.0"
     },
     "require-dev": {
+        "symfony/framework-bundle": " ^3.4 || ^4.2 || ^5.0",
         "symfony/phpunit-bridge": "^4.3 || ^5.0",
         "phpunit/phpunit": "^8.4"
     },
@@ -29,5 +30,10 @@
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-ci": "vendor/bin/phpunit --coverage-text --coverage-clover=build/coverage.xml"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.0-dev"
+        }
     }
 }

@@ -9,7 +9,7 @@
          processIsolation="false"
          stopOnFailure="false"
          bootstrap="./vendor/autoload.php"
-        >
+    >
 
     <listeners>
         <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener"/>
