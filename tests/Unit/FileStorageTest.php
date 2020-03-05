@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Translation\SymfonyStorage\Tests\Unit;
+namespace Translation\Common\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Translation\Loader\XliffFileLoader;
@@ -17,8 +17,8 @@ use Symfony\Component\Translation\MessageCatalogue;
 use Symfony\Component\Translation\MessageCatalogueInterface;
 use Symfony\Component\Translation\Reader\TranslationReader;
 use Symfony\Component\Translation\Writer\TranslationWriter;
+use Translation\Common\FileStorage;
 use Translation\Common\Model\Message;
-use Translation\SymfonyStorage\FileStorage;
 
 /**
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>

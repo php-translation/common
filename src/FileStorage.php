@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Translation\SymfonyStorage;
+namespace Translation\Common;
 
 use Symfony\Component\Translation\MessageCatalogue;
 use Symfony\Component\Translation\MessageCatalogueInterface;
@@ -17,8 +17,6 @@ use Symfony\Component\Translation\Reader\TranslationReaderInterface;
 use Symfony\Component\Translation\Writer\TranslationWriterInterface;
 use Translation\Common\Model\Message;
 use Translation\Common\Model\MessageInterface;
-use Translation\Common\Storage;
-use Translation\Common\TransferableStorage;
 
 /**
  * This storage uses Symfony's writer and loader.

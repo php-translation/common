@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Translation\SymfonyStorage;
+namespace Translation\Common;
 
 use Symfony\Component\Translation\Dumper\XliffFileDumper;
 use Symfony\Component\Translation\Loader\XliffFileLoader;

@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Translation\SymfonyStorage\Tests\Unit;
+namespace Translation\Common\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Translation\MessageCatalogue;
-use Translation\SymfonyStorage\XliffConverter;
+use Translation\Common\XliffConverter;
 
 /**
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
