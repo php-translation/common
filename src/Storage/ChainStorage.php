@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Translation\Common;
+namespace Translation\Common\Storage;
 
 use Symfony\Component\Translation\MessageCatalogueInterface;
 use Translation\Common\Model\MessageInterface;
@@ -17,19 +17,19 @@ use Translation\Common\Model\MessageInterface;
 /**
  * This storage allow you to deal with several storages at once.
  */
-class ChainStorage implements Storage
+class ChainStorage implements StorageInterface
 {
     private $storages = [];
 
     /**
-     * @param Storage[] $storages
+     * @param StorageInterface[] $storages
      */
     public function __construct(array $storages = [])
     {
         $this->storages = $storages;
     }
 
-    public function addStorage(Storage $storage): void
+    public function addStorage(StorageInterface $storage): void
     {
         $this->storages[] = $storage;
     }
@@ -84,10 +84,6 @@ class ChainStorage implements Storage
     public function export(MessageCatalogueInterface $catalogue, array $options = []): void
     {
         foreach ($this->storages as $storage) {
-            if (!$storage instanceof TransferableStorage) {
-                continue;
-            }
-
             $storage->export($catalogue, $options);
         }
     }
@@ -98,10 +94,6 @@ class ChainStorage implements Storage
     public function import(MessageCatalogueInterface $catalogue, array $options = []): void
     {
         foreach ($this->storages as $storage) {
-            if (!$storage instanceof TransferableStorage) {
-                continue;
-            }
-
             $storage->import($catalogue, $options);
         }
     }

@@ -9,14 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Translation\common\tests\Unit\Model;
+namespace Translation\common\tests\Unit\Storage;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Translation\MessageCatalogueInterface;
-use Translation\Common\ChainStorage;
 use Translation\Common\Model\Message;
-use Translation\Common\Storage;
-use Translation\Common\TransferableStorage;
+use Translation\Common\Storage\ChainStorage;
+use Translation\Common\Storage\StorageInterface;
 
 class ChainStorageTest extends TestCase
 {
@@ -26,8 +25,8 @@ class ChainStorageTest extends TestCase
 
     public function setUp(): void
     {
-        $this->childStorage1 = $this->prophesize(Storage::class);
-        $this->childStorage2 = $this->prophesize(Storage::class)->willImplement(TransferableStorage::class);
+        $this->childStorage1 = $this->prophesize(StorageInterface::class);
+        $this->childStorage2 = $this->prophesize(StorageInterface::class);
 
         $this->storage = new ChainStorage();
         $this->storage->addStorage($this->childStorage1->reveal());

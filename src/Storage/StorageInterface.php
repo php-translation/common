@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Translation\Common;
+namespace Translation\Common\Storage;
 
 use Symfony\Component\Translation\MessageCatalogueInterface;
 use Translation\Common\Model\MessageInterface;
@@ -20,7 +20,7 @@ use Translation\Common\Model\MessageInterface;
  *
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  */
-interface Storage
+interface StorageInterface
 {
     /**
      * Get a translation. If no translation is found, null MUST be returned.
