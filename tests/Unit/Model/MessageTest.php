@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Translation\common\tests\Unit\Model;
+namespace Translation\Common\Tests\Unit\Model;
 
 use PHPUnit\Framework\TestCase;
 use Translation\Common\Model\Message;
