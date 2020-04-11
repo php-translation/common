@@ -2,6 +2,12 @@
 
 The change log describes what is "Added", "Removed", "Changed" or "Fixed" between each release.
 
+## 4.0.0
+
+- Merge `Translation\Compon\TransferableStorage` & `Translation\Common\Storage` interfaces into a new `Translation\Common\Storage\StorageInterface`.
+- Import `XliffConverter` from `php-translation/storage`.
+- Introduce a new `ChainStorage` to deal with several `StorageInterface`.
+
 ## 3.0.1
 
 Added comments on the `TransferableStorage` interface to describe the options parameter.
