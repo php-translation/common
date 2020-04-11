@@ -81,23 +81,23 @@ final class FileStorage implements StorageInterface
     /**
      * {@inheritdoc}
      */
-    public function create(MessageInterface $m): void
+    public function create(MessageInterface $message): void
     {
-        $catalogue = $this->getCatalogue($m->getLocale());
-        if (!$catalogue->defines($m->getKey(), $m->getDomain())) {
-            $catalogue->set($m->getKey(), $m->getTranslation(), $m->getDomain());
-            $this->writeCatalogue($catalogue, $m->getLocale(), $m->getDomain());
+        $catalogue = $this->getCatalogue($message->getLocale());
+        if (!$catalogue->defines($message->getKey(), $message->getDomain())) {
+            $catalogue->set($message->getKey(), $message->getTranslation(), $message->getDomain());
+            $this->writeCatalogue($catalogue, $message->getLocale(), $message->getDomain());
         }
     }
 
     /**
      * {@inheritdoc}
      */
-    public function update(MessageInterface $m): void
+    public function update(MessageInterface $message): void
     {
-        $catalogue = $this->getCatalogue($m->getLocale());
-        $catalogue->set($m->getKey(), $m->getTranslation(), $m->getDomain());
-        $this->writeCatalogue($catalogue, $m->getLocale(), $m->getDomain());
+        $catalogue = $this->getCatalogue($message->getLocale());
+        $catalogue->set($message->getKey(), $message->getTranslation(), $message->getDomain());
+        $this->writeCatalogue($catalogue, $message->getLocale(), $message->getDomain());
     }
 
     /**
