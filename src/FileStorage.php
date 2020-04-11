@@ -23,7 +23,7 @@ use Translation\Common\Model\MessageInterface;
  *
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  */
-final class FileStorage implements Storage, TransferableStorage
+final class FileStorage implements Storage
 {
     /**
      * @var TranslationWriterInterface
