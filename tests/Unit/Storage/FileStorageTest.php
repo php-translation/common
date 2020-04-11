@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Translation\Common\Tests\Unit;
+namespace Translation\Common\Tests\Unit\Storage;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Translation\Loader\XliffFileLoader;
@@ -17,8 +17,8 @@ use Symfony\Component\Translation\MessageCatalogue;
 use Symfony\Component\Translation\MessageCatalogueInterface;
 use Symfony\Component\Translation\Reader\TranslationReader;
 use Symfony\Component\Translation\Writer\TranslationWriter;
-use Translation\Common\FileStorage;
 use Translation\Common\Model\Message;
+use Translation\Common\Storage\FileStorage;
 
 /**
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
@@ -211,7 +211,7 @@ class FileStorageTest extends TestCase
      */
     private function getFixturePath()
     {
-        return realpath(__DIR__.'/../Fixtures/single-file');
+        return realpath(__DIR__.'/../../Fixtures/single-file');
     }
 
     /**
