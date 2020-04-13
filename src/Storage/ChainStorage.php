@@ -19,6 +19,8 @@ use Translation\Common\Model\MessageInterface;
  */
 class ChainStorage implements StorageInterface
 {
+    const DIRECTION_DOWN = 'down';
+
     private $storages = [];
 
     /**
@@ -83,7 +85,12 @@ class ChainStorage implements StorageInterface
      */
     public function export(MessageCatalogueInterface $catalogue, array $options = []): void
     {
-        foreach ($this->storages as $storage) {
+        $storages = $this->storages;
+        if (isset($options['direction']) && self::DIRECTION_DOWN === $options['direction']) {
+            $storages = array_reverse($storages);
+        }
+
+        foreach ($storages as $storage) {
             $storage->export($catalogue, $options);
         }
     }
