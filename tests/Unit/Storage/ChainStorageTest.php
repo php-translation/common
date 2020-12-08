@@ -23,7 +23,7 @@ class ChainStorageTest extends TestCase
     private $childStorage2;
     private $storage;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->childStorage1 = $this->prophesize(StorageInterface::class);
         $this->childStorage2 = $this->prophesize(StorageInterface::class);
