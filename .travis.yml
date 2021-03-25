@@ -24,6 +24,8 @@ matrix:
         - php: 7.3
           env: COVERAGE=true TEST_COMMAND="composer test-ci"
 
+        - php: 8.0
+
           # Force some major versions of Symfony
         - php: 7.3
           env: DEPENDENCIES="dunglas/symfony-lock:^3"
