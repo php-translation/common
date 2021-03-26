@@ -2,6 +2,10 @@
 
 The change log describes what is "Added", "Removed", "Changed" or "Fixed" between each release.
 
+## 3.1.0
+
+Added support for PHP8.
+
 ## 3.0.1
 
 Added comments on the `TransferableStorage` interface to describe the options parameter.
