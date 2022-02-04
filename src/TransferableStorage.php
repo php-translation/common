@@ -23,9 +23,9 @@ interface TransferableStorage
     /**
      * Get messages from the storage into the $catalogue.
      *
-     * @var array a list of arbitrary options that could be used. The array SHOULD
-     *            use a format of array<string, array<mixed $value>.
-     *            Example: ['foo' => ['bar', 'baz]]
+     * @param array $options a list of arbitrary options that could be used. The array SHOULD
+     *                       use a format of array<string, array<mixed $value>.
+     *                       Example: ['foo' => ['bar', 'baz]]
      */
     public function export(MessageCatalogueInterface $catalogue, array $options = []): void;
 
@@ -34,9 +34,9 @@ interface TransferableStorage
      * should be considered as a "force merge". Existing messages in the storage
      * will be overwritten but no message will be removed.
      *
-     * @var array a list of arbitrary options that could be used. The array SHOULD
-     *            use a format of array<string, array<mixed $value>.
-     *            Example: ['foo' => ['bar', 'baz]]
+     * @param array $options a list of arbitrary options that could be used. The array SHOULD
+     *                       use a format of array<string, array<mixed $value>.
+     *                       Example: ['foo' => ['bar', 'baz]]
      */
     public function import(MessageCatalogueInterface $catalogue, array $options = []): void;
 }
