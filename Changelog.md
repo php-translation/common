@@ -2,6 +2,11 @@
 
 The change log describes what is "Added", "Removed", "Changed" or "Fixed" between each release.
 
+## 3.2.0
+
+### Added
+- Port Symfony 6 support from master into 3.x branch #48
+
 ## 3.1.0
 
 Added support for PHP8.
