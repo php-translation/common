@@ -15,4 +15,4 @@ $ composer require php-translation/common
 
 ## Documentation
 
-Read the full documentation at [https://php-translation.readthedocs.io/](https://php-translation.readthedocs.io/en/latest/).
+Read the full documentation at [https://php-translation.readthedocs.io](https://php-translation.readthedocs.io/en/latest/).
