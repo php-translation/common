@@ -41,7 +41,7 @@ class FileStorageTest extends TestCase
     public function testCreateNewCatalogue()
     {
         $writer = $this->getMockBuilder(TranslationWriter::class)
-            ->setMethods([$this->getMethodNameToWriteTranslations()])
+            ->onlyMethods([$this->getMethodNameToWriteTranslations()])
             ->disableOriginalConstructor()
             ->getMock();
         $writer->expects($this->once())
@@ -56,7 +56,7 @@ class FileStorageTest extends TestCase
         $storage->create(new Message('key', 'domain', 'en', 'Message'));
 
         $writer = $this->getMockBuilder(TranslationWriter::class)
-            ->setMethods([$this->getMethodNameToWriteTranslations()])
+            ->onlyMethods([$this->getMethodNameToWriteTranslations()])
             ->disableOriginalConstructor()
             ->getMock();
         $writer->expects($this->once())
@@ -74,7 +74,7 @@ class FileStorageTest extends TestCase
     public function testCreateExistingCatalogue()
     {
         $writer = $this->getMockBuilder(TranslationWriter::class)
-            ->setMethods([$this->getMethodNameToWriteTranslations()])
+            ->onlyMethods([$this->getMethodNameToWriteTranslations()])
             ->disableOriginalConstructor()
             ->getMock();
         $writer->expects($this->once())
@@ -117,7 +117,7 @@ class FileStorageTest extends TestCase
     public function testUpdate()
     {
         $writer = $this->getMockBuilder(TranslationWriter::class)
-            ->setMethods([$this->getMethodNameToWriteTranslations()])
+            ->onlyMethods([$this->getMethodNameToWriteTranslations()])
             ->disableOriginalConstructor()
             ->getMock();
         $writer->expects($this->exactly(2))
@@ -139,7 +139,7 @@ class FileStorageTest extends TestCase
     public function testDelete()
     {
         $writer = $this->getMockBuilder(TranslationWriter::class)
-            ->setMethods([$this->getMethodNameToWriteTranslations()])
+            ->onlyMethods([$this->getMethodNameToWriteTranslations()])
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -163,7 +163,7 @@ class FileStorageTest extends TestCase
     public function testImport()
     {
         $writer = $this->getMockBuilder(TranslationWriter::class)
-            ->setMethods([$this->getMethodNameToWriteTranslations()])
+            ->onlyMethods([$this->getMethodNameToWriteTranslations()])
             ->disableOriginalConstructor()
             ->getMock();
 
