@@ -12,6 +12,7 @@
 namespace Translation\common\tests\Unit\Storage;
 
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Symfony\Component\Translation\MessageCatalogueInterface;
 use Translation\Common\Model\Message;
 use Translation\Common\Storage\ChainStorage;
@@ -19,6 +20,7 @@ use Translation\Common\Storage\StorageInterface;
 
 class ChainStorageTest extends TestCase
 {
+    use ProphecyTrait;
     private $childStorage1;
     private $childStorage2;
     private $storage;
