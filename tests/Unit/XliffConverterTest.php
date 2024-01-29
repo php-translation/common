@@ -36,6 +36,6 @@ class XliffConverterTest extends TestCase
         $catalogue->add(['foobar' => 'bar']);
         $content = XliffConverter::catalogueToContent($catalogue, 'messages');
 
-        $this->assertRegExp('|foobar|', $content);
+        $this->assertMatchesRegularExpression('/foobar/', $content);
     }
 }
